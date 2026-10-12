@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Обсудить съёмку с фотографом Никой — AGENT 008."
+    >
+
+    <meta name="theme-color" content="#080808">
+
+    <title>Обсудить съёмку — AGENT 008</title>
+
+    <!-- Основные стили сайта -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Стили страницы контактов -->
+    <link rel="stylesheet" href="contact.css">
+
+    <!-- Шрифты основного сайта -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <script src="script.js" defer></script>
+    <script src="contact.js" defer></script>
+</head>
+
+<body class="contact-page">
+ <!-- Космический фон -->
+<div class="space-background" aria-hidden="true">
+    <div class="space-stars"></div>
+    <div class="space-glow"></div>
+    <div class="comets-container"></div>
+</div>
+ <div id="pageShell">
+    <!-- Экран загрузки в стиле основного сайта -->
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader__content">
+            <span class="loader__number">008</span>
+            <div class="loader__line"></div>
+            <span class="loader__text">УСТАНОВЛЕНИЕ СВЯЗИ</span>
+        </div>
+    </div>
+
+    <div class="ambient-light" aria-hidden="true"></div>
+
+    <!-- ШАПКА: сохраняем исходные классы и структуру -->
+    <header class="header" id="header">
+
+        <a href="index.html#home" class="header__logo"
+           aria-label="008 — Главная">
+            008<span>.</span>
+        </a>
+
+        <nav class="navigation" id="navigation">
+
+            <a href="index.html#home" class="navigation__link">
+                Главная
+            </a>
+
+            <a href="index.html#about" class="navigation__link">
+                Обо мне
+            </a>
+
+            <a href="index.html#portfolio" class="navigation__link">
+                Портфолио
+            </a>
+
+            <a href="contact.html"
+               class="navigation__link active">
+                Контакты
+            </a>
+
+        </nav>
+
+        <a href="#contact-options" class="header__button">
+            Связаться <span>↗</span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Открыть меню"
+            aria-expanded="false"
+            aria-controls="navigation"
+        >
+            <span></span>
+            <span></span>
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <!-- ГЛАВНЫЙ ЭКРАН -->
+        <section class="contact-hero">
+
+            <div class="contact-hero__grid" aria-hidden="true"></div>
+
+            <div class="contact-hero__corner contact-hero__corner--left"
+                 aria-hidden="true"></div>
+
+            <div class="contact-hero__corner contact-hero__corner--right"
+                 aria-hidden="true"></div>
+
+            <div class="contact-hero__topline">
+                <span>008 / PRIVATE CONNECTION</span>
+
+                <span class="contact-hero__status">
+                    <span class="status__dot"></span>
+                    ОТКРЫТЫЙ КАНАЛ СВЯЗИ
+                </span>
+            </div>
+
+            <div class="contact-hero__content">
+
+                <span class="eyebrow contact-hero__eyebrow">
+                    YOUR STORY STARTS HERE
+                </span>
+
+                <h1 class="contact-hero__title">
+                    Давай создадим<br>
+                    <span>что-то настоящее.</span>
+                </h1>
+
+                <p class="contact-hero__description">
+                    У тебя есть идея, настроение или просто желание
+                    сохранить важный момент?
+                    <br>
+                    Расскажи мне о нём — вместе найдём нужный кадр.
+                </p>
+
+                <a href="#contact-options"
+                   class="button button--primary contact-hero__button">
+
+                    <span>Выбрать способ связи</span>
+                    <span class="button__icon">↓</span>
+
+                </a>
+
+            </div>
+
+            <div class="contact-hero__bottomline">
+                <span>MISSION № 008</span>
+                <span>EVERY STORY MATTERS</span>
+            </div>
+
+        </section>
+
+
+        <!-- СПОСОБЫ СВЯЗИ -->
+        <section class="contact-options section" id="contact-options">
+
+            <div class="contact-options__heading reveal">
+
+                <span class="eyebrow">
+                    01 / CHANNELS
+                </span>
+
+                <h2>
+                    Выбирай свой<br>
+                    <span>канал связи.</span>
+                </h2>
+
+                <p>
+                    Напиши мне удобным способом.
+                    Я буду рада узнать о твоей идее и обсудить детали съёмки.
+                </p>
+
+            </div>
+
+
+            <div class="contact-cards">
+
+                <!-- TELEGRAM -->
+                <a
+                    class="contact-card reveal"
+                    href="https://t.me/YOURNIKOLE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <div class="contact-card__top">
+                        <span class="contact-card__index">01 / TG</span>
+                        <span class="contact-card__arrow">↗</span>
+                    </div>
+
+                    <div class="contact-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M21 3 3.8 9.7c-1.2.5-1.2 1.2-.2 1.5l4.4 1.4 1.7 5.3c.2.7.1 1 .8 1 .5 0 .7-.2 1-.5l2.2-2.1 4.6 3.4c.9.5 1.5.2 1.7-.8L23 4.5C23.3 3.2 22.5 2.6 21 3Z"
+                                stroke="currentColor"
+                                stroke-width="1.3"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="m8 12.4 10.5-6.6-8.6 8"
+                                stroke="currentColor"
+                                stroke-width="1.3"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div>
+
+                    <div class="contact-card__body">
+                        <h3>Telegram</h3>
+                        <p>@YOURNIKOLE</p>
+                    </div>
+
+                    <div class="contact-card__bottom">
+                        <span>НАПИСАТЬ СООБЩЕНИЕ</span>
+                        <span>↗</span>
+                    </div>
+
+                </a>
+
+
+                <!-- INSTAGRAM -->
+                <a
+                    class="contact-card reveal"
+                    href="https://www.instagram.com/YOURNIKOLE/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <div class="contact-card__top">
+                        <span class="contact-card__index">02 / IG</span>
+                        <span class="contact-card__arrow">↗</span>
+                    </div>
+
+                    <div class="contact-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <rect
+                                x="3.5" y="3.5"
+                                width="17" height="17"
+                                rx="5"
+                                stroke="currentColor"
+                                stroke-width="1.4"
+                            />
+                            <circle
+                                cx="12" cy="12"
+                                r="4"
+                                stroke="currentColor"
+                                stroke-width="1.4"
+                            />
+                            <circle
+                                cx="17.5" cy="6.8"
+                                r="1"
+                                fill="currentColor"
+                            />
+                        </svg>
+                    </div>
+
+                    <div class="contact-card__body">
+                        <h3>Instagram</h3>
+                        <p>@YOURNIKOLE</p>
+                    </div>
+
+                    <div class="contact-card__bottom">
+                        <span>СМОТРЕТЬ МОИ РАБОТЫ</span>
+                        <span>↗</span>
+                    </div>
+
+                </a>
+
+
+                <!-- ТЕЛЕФОН -->
+                <a
+                    class="contact-card reveal"
+                    href="tel:+79852628640"
+                >
+
+                    <div class="contact-card__top">
+                        <span class="contact-card__index">03 / CALL</span>
+                        <span class="contact-card__arrow">↗</span>
+                    </div>
+
+                    <div class="contact-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M7 3.5h10a1.5 1.5 0 0 1 1.5 1.5v14a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 19V5A1.5 1.5 0 0 1 7 3.5Z"
+                                stroke="currentColor"
+                                stroke-width="1.4"
+                            />
+                            <path
+                                d="M10 17.5h4"
+                                stroke="currentColor"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+                    </div>
+
+                    <div class="contact-card__body">
+                        <h3>Телефон</h3>
+                        <p>+7 (985) 262-86-40</p>
+                    </div>
+
+                    <div class="contact-card__bottom">
+                        <span>ПОЗВОНИТЬ МНЕ</span>
+                        <span>↗</span>
+                    </div>
+
+                </a>
+
+
+                <!-- EMAIL -->
+                <a
+                    class="contact-card reveal"
+                    href="mailto:YOUNIKOLE@GMAIL.com"
+                >
+
+                    <div class="contact-card__top">
+                        <span class="contact-card__index">04 / MAIL</span>
+                        <span class="contact-card__arrow">↗</span>
+                    </div>
+
+                    <div class="contact-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <rect
+                                x="3" y="5"
+                                width="18" height="14"
+                                rx="1.5"
+                                stroke="currentColor"
+                                stroke-width="1.4"
+                            />
+                            <path
+                                d="m4 7 8 6 8-6"
+                                stroke="currentColor"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div>
+
+                    <div class="contact-card__body">
+                        <h3>Email</h3>
+                        <p>YOUNIKOLE@GMAIL.COM</p>
+                    </div>
+
+                    <div class="contact-card__bottom">
+                        <span>НАПИСАТЬ ПИСЬМО</span>
+                        <span>↗</span>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ФИНАЛЬНЫЙ БЛОК -->
+        <section class="contact-finale">
+
+            <span class="eyebrow reveal">
+                02 / YOUR NEXT CHAPTER
+            </span>
+
+            <div class="contact-finale__number" aria-hidden="true">
+                008
+            </div>
+
+            <h2 class="reveal">
+                До встречи<br>
+                <span>в кадре.</span>
+            </h2>
+
+            <p class="reveal">
+                Твоя история заслуживает того, чтобы её сохранить.
+            </p>
+
+            <a
+                href="https://t.me/YOURNIKOLE"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button button--primary reveal"
+            >
+                <span>Написать агенту</span>
+                <span class="button__icon">↗</span>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ПОДВАЛ: та же структура, что на главной -->
+    <footer class="footer">
+
+        <a href="index.html#home" class="footer__logo">
+            008<span>.</span>
+        </a>
+
+        <p class="footer__copyright">
+            © <span id="currentYear"></span> AGENT 008
+        </p>
+
+        <p class="footer__tagline">
+            АГЕНТ ТВОИХ ЭМОЦИЙ
+        </p>
+
+        <a href="contact.html" class="footer__top">
+            НАВЕРХ ↑
+        </a>
+
+    </footer>
+</div>
+</body>
+</html>

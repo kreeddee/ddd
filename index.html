@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="008 — Агент твоих эмоций. Фотография, портреты и истории в кадре."
+    >
+
+    <meta name="theme-color" content="#080808">
+
+    <title>008 — Агент твоих эмоций</title>
+
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Подключаем шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Подключаем JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+<!-- КОСМИЧЕСКИЙ ФОН -->
+
+    <div class="space-background" aria-hidden="true">
+        <div class="space-stars"></div>
+        <div class="space-glow"></div>
+        <div class="comets-container"></div>
+    </div>
+    <!-- =======================================
+         ЭКРАН ЗАГРУЗКИ
+    ======================================== -->
+
+    <div class="loader" id="loader" aria-hidden="true">
+
+        <div class="loader__content">
+
+            <span class="loader__number">008</span>
+
+            <div class="loader__line"></div>
+
+            <span class="loader__text">
+                ИНИЦИАЛИЗАЦИЯ ОБЪЕКТИВА
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =======================================
+         СВЕТОВОЙ ЭФФЕКТ
+    ======================================== -->
+
+    <div class="ambient-light" aria-hidden="true"></div>
+
+
+    <!-- =======================================
+         ШАПКА САЙТА
+    ======================================== -->
+    
+<div id="pageShell">
+    <header class="header" id="header">
+
+        <a href="#home" class="header__logo" aria-label="008 — Главная">
+            008<span>.</span>
+        </a>
+
+        <nav class="navigation" id="navigation">
+
+            <a href="#home" class="navigation__link active">
+                Главная
+            </a>
+
+            <a href="#about" class="navigation__link">
+                Обо мне
+            </a>
+
+            <a href="#portfolio" class="navigation__link">
+                Портфолио
+            </a>
+
+            <a href="contact.html" class="navigation__link">
+                Контакты
+            </a>
+
+        </nav>
+
+        <a href="contact.html" class="header__button">
+            Связаться <span>↗</span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Открыть меню"
+            aria-expanded="false"
+            aria-controls="navigation"
+        >
+            <span></span>
+            <span></span>
+        </button>
+
+    </header>
+
+
+    <!-- =======================================
+         ГЛАВНЫЙ ЭКРАН
+    ======================================== -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <!-- Декоративная сетка -->
+            <div class="hero__grid" aria-hidden="true"></div>
+
+            <!-- Декоративные линии -->
+            <div class="hero__corner hero__corner--left"></div>
+            <div class="hero__corner hero__corner--right"></div>
+
+
+            <!-- Информация сверху -->
+        <div class="hero__topline reveal">
+
+    <span class="status">
+        <span class="status__dot"></span>
+        PHOTOGRAPHY / VISUAL STORIES
+    </span>
+
+    <span class="hero__profession">
+        ФОТОГРАФ
+    </span>
+
+    <span class="hero__edition">
+        INDEPENDENT CREATIVE
+    </span>
+
+</div>
+
+            <!-- Главный логотип -->
+            <div class="hero__main">
+
+                <div class="hero__number-wrap">
+
+                    <span class="hero__side-note hero__side-note--left">
+                        YOUR<br>EMOTIONS
+                    </span>
+
+                    <h1 class="hero__number" aria-label="Ноль ноль восемь">
+                        008
+                    </h1>
+
+                    <span class="hero__side-note hero__side-note--right">
+                        IN<br>FOCUS
+                    </span>
+
+                    <!-- Световой блик -->
+                    <div class="hero__lens-flare" aria-hidden="true"></div>
+
+                </div>
+
+
+                <div class="hero__signature reveal">
+
+                    <span class="hero__signature-line"></span>
+
+                    <p>АГЕНТ ТВОИХ ЭМОЦИЙ</p>
+
+                    <span class="hero__signature-line"></span>
+
+                </div>
+
+
+                <p class="hero__description reveal">
+                    Ловлю мгновения.<br>
+                    Сохраняю чувства.
+                </p>
+
+
+                <div class="hero__actions reveal">
+
+                    <a href="#portfolio" class="button button--primary">
+                        <span>Смотреть портфолио</span>
+                        <span class="button__icon">↗</span>
+                    </a>
+
+                    <a href="#about" class="button button--text">
+                        Познакомиться <span>↓</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Декоративный объектив -->
+            <div class="lens" aria-hidden="true">
+
+                <div class="lens__ring lens__ring--outer"></div>
+
+                <div class="lens__ring lens__ring--middle"></div>
+
+                <div class="lens__ring lens__ring--inner"></div>
+
+                <div class="lens__glass">
+
+                    <div class="lens__reflection"></div>
+
+                    <div class="lens__iris"></div>
+
+                </div>
+
+                <div class="lens__spark"></div>
+
+            </div>
+
+
+            <!-- Информация снизу -->
+            <div class="hero__bottomline reveal">
+
+                <span>MISSION № 008</span>
+
+                <a href="#portfolio" class="scroll-indicator">
+                    <span>ЛИСТАЙ ВНИЗ</span>
+                    <span class="scroll-indicator__arrow">↓</span>
+                </a>
+
+                <span>CAPTURE THE MOMENT</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =======================================
+             О БРЕНДЕ
+        ======================================== -->
+
+        <section class="about section" id="about">
+
+            <div class="section__heading reveal">
+
+                <span class="eyebrow">
+                    01 / ЛИЧНОЕ ДЕЛО
+                </span>
+
+                <h2>
+                    За каждым кадром<br>
+                    <span>стоит чувство.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="about__content">
+
+                <div class="about__visual reveal">
+
+    <div class="about__frame">
+
+        <!-- НАСТОЯЩАЯ ФОТОГРАФИЯ НИКИ -->
+
+        <img
+            class="about__photo"
+            src="images/agent.png"
+            alt="Ника — фотограф и агент 008"
+            loading="lazy"
+        >
+
+        <!-- ПОДПИСЬ ПОД ФОТОГРАФИЕЙ -->
+
+        <span class="about__frame-label">
+            FIG. 001 / AGENT 008
+        </span>
+
+    </div>
+
+
+                </div>
+
+
+                <div class="about__text reveal">
+
+                    <span class="about__small-title">
+                        ПРИВЕТ, Я НИКА.
+                    </span>
+
+                    <p class="about__lead">
+                        Я верю, что самые красивые фотографии —
+                        это не идеальные позы, а настоящие эмоции.
+                    </p>
+
+                    <p class="about__paragraph">
+                        Взгляд, который невозможно повторить.
+                        Улыбка, которая появляется сама собой.
+                        Мгновение, к которому хочется возвращаться.
+                    </p>
+
+                    <p class="about__paragraph">
+                        Я здесь, чтобы сохранить твою историю
+                        в кадрах, которые будут иметь значение.
+                    </p>
+
+                    <div class="about__signature">
+                        <span>agent 008</span>
+                        <span class="about__signature-symbol">∞</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =======================================
+             ПОРТФОЛИО
+        ======================================== -->
+
+        <section class="portfolio section" id="portfolio">
+
+            <div class="section__heading reveal">
+
+                <span class="eyebrow">
+                    02 / АРХИВ ЭМОЦИЙ
+                </span>
+
+                <h2>
+                    Истории,<br>
+                    <span>пойманные в фокус.</span>
+                </h2>
+
+                <p class="section__description">
+                    Каждый кадр — отдельная история.
+                    Каждая история — чьи-то настоящие эмоции.
+                </p>
+
+            </div>
+
+
+            <div class="portfolio__grid">
+
+
+                <!-- ФОТОГРАФИЯ 1 -->
+
+                <article class="photo-card photo-card--large reveal">
+
+                    <div class="photo-card__image">
+
+                        <img
+                            src="images/1.png"
+                            alt="Женский портрет"
+                            loading="lazy"
+                        >
+
+                        <span class="photo-card__index">001</span>
+
+                        <span class="photo-card__zoom">↗</span>
+
+                    </div>
+
+                    <div class="photo-card__info">
+
+                        <div>
+                            <h3>Portrait</h3>
+                            <p>Индивидуальные истории</p>
+                        </div>
+
+                        <span class="photo-card__category">
+                            01 / PORTRAIT
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ФОТОГРАФИЯ 2 -->
+
+                <article class="photo-card photo-card--small reveal">
+
+                    <div class="photo-card__image">
+
+                        <img
+                            src="images/2.png"
+                            alt="Романтическая история пары"
+                            loading="lazy"
+                        >
+
+                        <span class="photo-card__index">002</span>
+
+                        <span class="photo-card__zoom">↗</span>
+
+                    </div>
+
+                    <div class="photo-card__info">
+
+                        <div>
+                            <h3>Story</h3>
+                            <p>история</p>
+                        </div>
+
+                        <span class="photo-card__category">
+                            02 / LOVE
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ФОТОГРАФИЯ 3 -->
+
+                <article class="photo-card photo-card--small reveal">
+
+                    <div class="photo-card__image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=85"
+                            alt="Золотой свет на природе"
+                            loading="lazy"
+                        >
+
+                        <span class="photo-card__index">003</span>
+
+                        <span class="photo-card__zoom">↗</span>
+
+                    </div>
+
+                    <div class="photo-card__info">
+
+                        <div>
+                            <h3>Golden Hour</h3>
+                            <p>Магия естественного света</p>
+                        </div>
+
+                        <span class="photo-card__category">
+                            03 / NATURE
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ФОТОГРАФИЯ 4 -->
+
+                <article class="photo-card photo-card--large reveal">
+
+                    <div class="photo-card__image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1200&q=85"
+                            alt="Портрет девушки в естественном свете"
+                            loading="lazy"
+                        >
+
+                        <span class="photo-card__index">004</span>
+
+                        <span class="photo-card__zoom">↗</span>
+
+                    </div>
+
+                    <div class="photo-card__info">
+
+                        <div>
+                            <h3>Natural Beauty</h3>
+                            <p>Красота быть собой</p>
+                        </div>
+
+                        <span class="photo-card__category">
+                            04 / BEAUTY
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =======================================
+             НАПРАВЛЕНИЯ СЪЁМОК
+        ======================================== -->
+
+        <section class="services section" id="services">
+
+            <div class="section__heading reveal">
+
+                <span class="eyebrow">
+                    03 / МОЯ МИССИЯ
+                </span>
+
+                <h2>
+                    Что будем<br>
+                    <span>снимать?</span>
+                </h2>
+
+            </div>
+
+
+            <div class="services__list">
+
+                <a href="#contact" class="service reveal">
+
+                    <span class="service__number">01</span>
+
+                    <span class="service__name">
+                        Портреты
+                    </span>
+
+                    <span class="service__description">
+                        Ты настоящая
+                    </span>
+
+                    <span class="service__arrow">↗</span>
+
+                </a>
+
+
+                <a href="#contact" class="service reveal">
+
+                    <span class="service__number">02</span>
+
+                    <span class="service__name">
+                        Love Story
+                    </span>
+
+                    <span class="service__description">
+                        Вы и ваша история
+                    </span>
+
+                    <span class="service__arrow">↗</span>
+
+                </a>
+
+
+                <a href="#contact" class="service reveal">
+
+                    <span class="service__number">03</span>
+
+                    <span class="service__name">
+                        Семейные съёмки
+                    </span>
+
+                    <span class="service__description">
+                        Моменты, которые остаются
+                    </span>
+
+                    <span class="service__arrow">↗</span>
+
+                </a>
+
+
+                <a href="#contact" class="service reveal">
+
+                    <span class="service__number">04</span>
+
+                    <span class="service__name">
+                        Творческие проекты
+                    </span>
+
+                    <span class="service__description">
+                        Идеи без границ
+                    </span>
+
+                    <span class="service__arrow">↗</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =======================================
+             КОНТАКТЫ
+        ======================================== -->
+
+        <section class="contact section" id="contact">
+
+            <span class="eyebrow reveal">
+                04 / СВЯЗЬ С АГЕНТОМ
+            </span>
+
+            <div class="contact__main reveal">
+
+                <h2>
+                    Твоя история<br>
+                    <span>начинается здесь.</span>
+                </h2>
+
+                <p>
+                    Расскажи мне о своей идее.
+                    Вместе мы превратим её в кадры.
+                </p>
+
+                <!-- ЗАМЕНИ ССЫЛКУ НА СВОЙ TELEGRAM -->
+
+               <a
+    href="contact.html"
+    class="button button--primary contact__button"
+>
+    <span>Обсудить съёмку</span>
+    <span class="button__icon">↗</span>
+</a>
+
+            </div>
+
+
+            <div class="contact__stamp" aria-hidden="true">
+                <span>008</span>
+                <span>AGENT OF EMOTIONS</span>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =======================================
+         ПОДВАЛ
+    ======================================== -->
+
+    <footer class="footer">
+
+        <a href="#home" class="footer__logo">
+            008<span>.</span>
+        </a>
+
+        <p class="footer__copyright">
+            © <span id="currentYear"></span> AGENT 008
+        </p>
+
+        <p class="footer__tagline">
+            АГЕНТ ТВОИХ ЭМОЦИЙ
+        </p>
+
+        <a href="#home" class="footer__top">
+            НАВЕРХ ↑
+        </a>
+
+    </footer>
+</div>
+
+</body>
+</html>
