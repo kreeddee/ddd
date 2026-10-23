@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Портфолио фотографа 008 — истории, пойманные в фокус."
+    >
+
+    <meta name="theme-color" content="#080808">
+
+    <title>Портфолио — 008 | Агент твоих эмоций</title>
+
+    <!-- Основные стили сайта -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Стили страницы портфолио -->
+    <link rel="stylesheet" href="portfolio.css">
+
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Существующие анимации сайта -->
+    <script src="script.js" defer></script>
+
+    <!-- Логика портфолио -->
+    <script src="portfolio.js" defer></script>
+</head>
+
+<body id="portfolio-top">
+
+    <!-- Космический фон -->
+    <div class="space-background" aria-hidden="true">
+        <div class="space-stars"></div>
+        <div class="space-glow"></div>
+        <div class="comets-container"></div>
+    </div>
+
+    <!-- Экран загрузки -->
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader__content">
+            <span class="loader__logo">008<span>.</span></span>
+            <span class="loader__text">Загружаем эмоции...</span>
+        </div>
+    </div>
+
+    <div class="ambient-light" aria-hidden="true"></div>
+
+    <!-- Обёртка страницы -->
+    <div id="pageShell">
+
+        <!-- ШАПКА -->
+        <header class="header" id="header">
+
+            <a
+                href="index.html"
+                class="header__logo"
+                aria-label="008 — Главная"
+            >
+                008<span>.</span>
+            </a>
+
+            <nav
+                class="navigation"
+                id="navigation"
+                aria-label="Главная навигация"
+            >
+                <a
+                    href="index.html#home"
+                    class="navigation__link"
+                >
+                    Главная
+                </a>
+
+                <a
+                    href="index.html#about"
+                    class="navigation__link"
+                >
+                    Обо мне
+                </a>
+
+                <a
+                    href="portfolio.html"
+                    class="navigation__link active"
+                    aria-current="page"
+                >
+                    Портфолио
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="navigation__link"
+                >
+                    Контакты
+                </a>
+            </nav>
+
+            <a href="contact.html" class="header__button">
+                Связаться <span>↗</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Открыть меню"
+                aria-expanded="false"
+                aria-controls="navigation"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+        </header>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main>
+
+            <!-- ЗАГОЛОВОК ПОРТФОЛИО -->
+            <section class="archive-hero" aria-labelledby="archiveTitle">
+
+                <div class="archive-hero__content reveal">
+
+                    <span class="archive-hero__eyebrow">
+                        008 / VISUAL ARCHIVE
+                    </span>
+
+                    <h1 id="archiveTitle" class="archive-hero__title">
+                        Истории,<br>
+                        пойманные <span>в фокус.</span>
+                    </h1>
+
+                    <p class="archive-hero__description">
+                        Не просто фотографии.
+                        Моменты, чувства и истории,
+                        к которым хочется возвращаться.
+                    </p>
+
+                    <a href="#gallery" class="archive-hero__scroll">
+                        <span class="archive-hero__scroll-line"></span>
+                        Смотреть работы
+                        <span aria-hidden="true">↓</span>
+                    </a>
+
+                </div>
+
+                <div class="archive-hero__side" aria-hidden="true">
+                    <span>EMOTIONS</span>
+                    <span>IN FOCUS</span>
+                    <span>EST. 008</span>
+                </div>
+
+            </section>
+
+            <!-- ГАЛЕРЕЯ -->
+            <section
+                class="archive-gallery section"
+                id="gallery"
+                aria-labelledby="galleryTitle"
+            >
+
+                <div class="archive-gallery__heading reveal">
+
+                    <div>
+                        <span class="archive-label">
+                            SELECTED WORKS / 001
+                        </span>
+
+                        <h2 id="galleryTitle" class="archive-gallery__title">
+                            Мой <span>взгляд.</span>
+                        </h2>
+                    </div>
+
+                    <p class="archive-gallery__subtitle">
+                        Каждая фотография — отдельная история.
+                    </p>
+
+                </div>
+
+                <!-- ФИЛЬТРЫ -->
+                <div
+                    class="archive-filters reveal"
+                    role="group"
+                    aria-label="Фильтр фотографий"
+                >
+                    <button
+                        class="archive-filter is-active"
+                        type="button"
+                        data-filter="all"
+                        aria-pressed="true"
+                    >
+                        Все работы
+                    </button>
+
+                    <button
+                        class="archive-filter"
+                        type="button"
+                        data-filter="portrait"
+                        aria-pressed="false"
+                    >
+                        Портреты
+                    </button>
+
+                    <button
+                        class="archive-filter"
+                        type="button"
+                        data-filter="love"
+                        aria-pressed="false"
+                    >
+                        Love Story
+                    </button>
+
+                    <button
+                        class="archive-filter"
+                        type="button"
+                        data-filter="nature"
+                        aria-pressed="false"
+                    >
+                        Природа
+                    </button>
+
+                    <button
+                        class="archive-filter"
+                        type="button"
+                        data-filter="creative"
+                        aria-pressed="false"
+                    >
+                        Творческие проекты
+                    </button>
+                </div>
+
+                <!-- СЧЁТЧИК -->
+                <div class="archive-gallery__meta">
+                    <span id="galleryCount">06 РАБОТ</span>
+                    <span>ЛИСТАЙ И ЧУВСТВУЙ ↘</span>
+                </div>
+
+                <!-- ФОТОГРАФИИ -->
+                <div class="archive-grid" id="archiveGrid">
+
+                    <!-- Фото 1 -->
+                    <button
+                        class="archive-card archive-card--tall reveal"
+                        type="button"
+                        data-category="portrait"
+                        data-full="images/1.png"
+                        data-alt="Портрет — работа 01"
+                        aria-label="Открыть фотографию 01"
+                    >
+                        <img
+                            src="images/1.png"
+                            alt="Портрет"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">001</span>
+                            <span class="archive-card__name">PORTRAIT</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+
+                    <!-- Фото 2 -->
+                    <button
+                        class="archive-card reveal"
+                        type="button"
+                        data-category="love"
+                        data-full="images/2.png"
+                        data-alt="Love Story — работа 02"
+                        aria-label="Открыть фотографию 02"
+                    >
+                        <img
+                            src="images/2.png"
+                            alt="Love Story"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">002</span>
+                            <span class="archive-card__name">LOVE STORY</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+
+                    <!-- Фото 3 -->
+                    <button
+                        class="archive-card reveal"
+                        type="button"
+                        data-category="creative"
+                        data-full="images/12.png"
+                        data-alt="Творческий проект — работа 03"
+                        aria-label="Открыть фотографию 03"
+                    >
+                        <img
+                            src="images/12.png"
+                            alt="Творческий проект"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">003</span>
+                            <span class="archive-card__name">CREATIVE</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+
+                    <!-- Фото 4 -->
+                    <button
+                        class="archive-card archive-card--wide reveal"
+                        type="button"
+                        data-category="nature"
+                        data-full="images/3.png"
+                        data-alt="Природа — работа 04"
+                        aria-label="Открыть фотографию 04"
+                    >
+                        <img
+                            src="images/3.png"
+                            alt="Природа"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">004</span>
+                            <span class="archive-card__name">NATURE</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+
+                    <!-- Фото 5 -->
+                    <button
+                        class="archive-card reveal"
+                        type="button"
+                        data-category="portrait"
+                        data-full="images/13.png"
+                        data-alt="Портрет — работа 05"
+                        aria-label="Открыть фотографию 05"
+                    >
+                        <img
+                            src="images/13.png"
+                            alt="Портретная фотография"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">005</span>
+                            <span class="archive-card__name">PORTRAIT</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+
+                    <!-- Фото 6 -->
+                    <button
+                        class="archive-card archive-card--tall reveal"
+                        type="button"
+                        data-category="creative"
+                        data-full="images/18.png"
+                        data-alt="Творческая серия — работа 06"
+                        aria-label="Открыть фотографию 06"
+                    >
+                        <img
+                            src="images/18.png"
+                            alt="Творческая серия"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">006</span>
+                            <span class="archive-card__name">ART SERIES</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+      <button
+                        class="archive-card reveal"
+                        type="button"
+                        data-category="portrait"
+                        data-full="images/14.png"
+                        data-alt="Портрет — работа 05"
+                        aria-label="Открыть фотографию 05"
+                    >
+                        <img
+                            src="images/14.png"
+                            alt="Портретная фотография"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">005</span>
+                            <span class="archive-card__name">PORTRAIT</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+                          <button
+                        class="archive-card reveal"
+                        type="button"
+                        data-category="portrait"
+                        data-full="images/15.png"
+                        data-alt="Портрет — работа 05"
+                        aria-label="Открыть фотографию 05"
+                    >
+                        <img
+                            src="images/15.png"
+                            alt="Портретная фотография"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">005</span>
+                            <span class="archive-card__name">PORTRAIT</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+                          <button
+                        class="archive-card reveal"
+                        type="button"
+                        data-category="portrait"
+                        data-full="images/16.png"
+                        data-alt="Портрет — работа 05"
+                        aria-label="Открыть фотографию 05"
+                    >
+                        <img
+                            src="images/16.png"
+                            alt="Портретная фотография"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">005</span>
+                            <span class="archive-card__name">PORTRAIT</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+                          <button
+                        class="archive-card reveal"
+                        type="button"
+                        data-category="portrait"
+                        data-full="images/17.png"
+                        data-alt="Портрет — работа 05"
+                        aria-label="Открыть фотографию 05"
+                    >
+                        <img
+                            src="images/17.png"
+                            alt="Портретная фотография"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">005</span>
+                            <span class="archive-card__name">PORTRAIT</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+                          <button
+                        class="archive-card reveal"
+                        type="button"
+                        data-category="portrait"
+                        data-full="images/19.png"
+                        data-alt="Портрет — работа 05"
+                        aria-label="Открыть фотографию 05"
+                    >
+                        <img
+                            src="images/19.png"
+                            alt="Портретная фотография"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">005</span>
+                            <span class="archive-card__name">PORTRAIT</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+      <button
+                        class="archive-card reveal"
+                        type="button"
+                        data-category="portrait"
+                        data-full="images/20.png"
+                        data-alt="Портрет — работа 05"
+                        aria-label="Открыть фотографию 05"
+                    >
+                        <img
+                            src="images/20.png"
+                            alt="Портретная фотография"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">005</span>
+                            <span class="archive-card__name">PORTRAIT</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+      <button
+                        class="archive-card reveal"
+                        type="button"
+                        data-category="portrait"
+                        data-full="images/21.png"
+                        data-alt="Портрет — работа 05"
+                        aria-label="Открыть фотографию 05"
+                    >
+                        <img
+                            src="images/21.png"
+                            alt="Портретная фотография"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">005</span>
+                            <span class="archive-card__name">PORTRAIT</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+      <button
+                        class="archive-card reveal"
+                        type="button"
+                        data-category="portrait"
+                        data-full="images/22.png"
+                        data-alt="Портрет — работа 05"
+                        aria-label="Открыть фотографию 05"
+                    >
+                        <img
+                            src="images/22.png"
+                            alt="Портретная фотография"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">005</span>
+                            <span class="archive-card__name">PORTRAIT</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+                          <button
+                        class="archive-card reveal"
+                        type="button"
+                        data-category="portrait"
+                        data-full="images/23.png"
+                        data-alt="Портрет — работа 05"
+                        aria-label="Открыть фотографию 05"
+                    >
+                        <img
+                            src="images/23.png"
+                            alt="Портретная фотография"
+                            loading="lazy"
+                        >
+
+                        <span class="archive-card__overlay">
+                            <span class="archive-card__number">005</span>
+                            <span class="archive-card__name">PORTRAIT</span>
+                            <span class="archive-card__open" aria-hidden="true">↗</span>
+                        </span>
+                    </button>
+
+                </div>
+
+                <!-- Сообщение при отсутствии работ -->
+                <p
+                    class="archive-empty"
+                    id="archiveEmpty"
+                    hidden
+                >
+                    В этой категории пока нет фотографий.
+                </p>
+
+            </section>
+
+            <!-- ФИНАЛЬНЫЙ ПРИЗЫВ -->
+            <section class="archive-cta reveal">
+
+                <span class="archive-label">
+                    YOUR STORY / NEXT CHAPTER
+                </span>
+
+                <h2>
+                    Может быть,<br>
+                    следующая история — <span>твоя?</span>
+                </h2>
+
+                <p>
+                    Давай создадим что-то настоящее.
+                    То, что останется с тобой надолго.
+                </p>
+
+                <a href="contact.html" class="archive-cta__button">
+                    Обсудить съёмку <span>↗</span>
+                </a>
+
+            </section>
+
+        </main>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+
+            <a
+                href="#portfolio-top"
+                class="footer__logo"
+                aria-label="Вернуться наверх"
+            >
+                008<span>.</span>
+            </a>
+
+            <p class="footer__copyright">
+                © <span id="currentYear"></span> 008.
+                Все права защищены.
+            </p>
+
+            <p class="footer__tagline">
+                Агент твоих эмоций.
+            </p>
+
+            <a
+                href="#portfolio-top"
+                class="footer__top"
+                aria-label="Наверх"
+            >
+                ↑
+            </a>
+
+        </footer>
+
+    </div>
+
+    <!-- ПОЛНОЭКРАННАЯ ГАЛЕРЕЯ -->
+    <div
+        class="lightbox"
+        id="lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Просмотр фотографии"
+        aria-hidden="true"
+        inert
+    >
+
+        <button
+            class="lightbox__close"
+            id="lightboxClose"
+            type="button"
+            aria-label="Закрыть фотографию"
+        >
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="lightbox__top">
+            <span class="lightbox__brand">008 / ARCHIVE</span>
+            <span class="lightbox__counter" id="lightboxCounter">01 / 06</span>
+        </div>
+
+        <button
+            class="lightbox__arrow lightbox__arrow--prev"
+            id="lightboxPrev"
+            type="button"
+            aria-label="Предыдущая фотография"
+        >
+            ←
+        </button>
+
+        <figure class="lightbox__figure">
+
+            <img
+                class="lightbox__image"
+                id="lightboxImage"
+                src=""
+                alt=""
+            >
+
+            <figcaption
+                class="lightbox__caption"
+                id="lightboxCaption"
+            ></figcaption>
+
+        </figure>
+
+        <button
+            class="lightbox__arrow lightbox__arrow--next"
+            id="lightboxNext"
+            type="button"
+            aria-label="Следующая фотография"
+        >
+            →
+        </button>
+
+        <span class="lightbox__hint">
+            ← → ПЕРЕКЛЮЧЕНИЕ &nbsp; / &nbsp; ESC ЗАКРЫТЬ
+        </span>
+
+    </div>
+
+</body>
+</html>

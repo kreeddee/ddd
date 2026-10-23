@@ -60,39 +60,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // Мобильное меню — используем исходные классы сайта
-    const menuToggle = document.getElementById("menuToggle");
-    const navigation = document.getElementById("navigation");
-
-    if (menuToggle && navigation) {
-
-        const closeMenu = () => {
-            navigation.classList.remove("is-open");
-            menuToggle.classList.remove("is-active");
-            menuToggle.setAttribute("aria-expanded", "false");
-            document.body.classList.remove("menu-open");
-        };
-
-        menuToggle.addEventListener("click", () => {
-
-            const isOpen = navigation.classList.toggle("is-open");
-
-            menuToggle.classList.toggle("is-active", isOpen);
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
-            document.body.classList.toggle("menu-open", isOpen);
-
-        });
-
-        navigation.querySelectorAll("a").forEach((link) => {
-            link.addEventListener("click", closeMenu);
-        });
-
-        window.addEventListener("resize", () => {
-            if (window.innerWidth > 700) {
-                closeMenu();
-            }
-        });
-
-    }
-
 });

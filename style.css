@@ -2737,24 +2737,44 @@ img {
 
 @media (max-width: 700px) {
 
-    /*
-       Шапка должна оставаться над контентом.
-       Её нельзя сдвигать отдельно от страницы.
-    */
+/* ========================================
+   MOBILE MENU — PUSH CONTENT DOWN
+   AGENT 008
+======================================== */
 
+@media (max-width: 700px) {
+
+    /* Шапка всегда остаётся на месте */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1002;
+    }
+
+    /* Не двигаем весь сайт вместе с шапкой */
     #pageShell {
         position: relative;
         z-index: 2;
+        transform: none;
+    }
 
+    /* Плавно сдвигаем содержимое сайта вниз */
+    #pageShell main,
+    #pageShell .footer {
         transform: translateY(0);
-
-        transition:
-            transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: transform;
     }
 
-    #pageShell.menu-open {
-        transform: translateY(260px);
+    /* Когда меню открыто, содержимое опускается */
+    #pageShell.menu-open main,
+    #pageShell.menu-open .footer {
+        transform: translateY(300px);
     }
+
+}
 
     /*
        Меню размещается над страницей.
@@ -2842,5 +2862,18 @@ img {
         top: 28px;
         font-size: 12px;
         letter-spacing: 0.14em;
+    }
+}
+
+/* Плавная адаптация надписи «ФОТОГРАФ» */
+@media (min-width: 701px) and (max-width: 990px) {
+    .hero__profession {
+        top: 35px;
+        font-size: clamp(30px, 4.5vw, 44px);
+        letter-spacing: 0.12em;
+        transition:
+            top 0.5s ease,
+            font-size 0.5s ease,
+            letter-spacing 0.5s ease;
     }
 }

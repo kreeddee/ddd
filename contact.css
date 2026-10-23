@@ -502,3 +502,89 @@
     }
 
 }
+/* ========================================
+   AGENT 008 — CONTACT MOBILE MENU FIX
+======================================== */
+
+@media (max-width: 700px) {
+
+    /* Кнопка меню */
+    .contact-page #menuToggle {
+        position: relative;
+        z-index: 1005;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+    }
+
+    /* Полоски кнопки */
+    .contact-page #menuToggle span {
+        display: block;
+        width: 24px;
+        height: 1px;
+        background: #fff;
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+
+    /* Превращаем полоски в крестик */
+    .contact-page #menuToggle.is-active span:first-child {
+        transform: translateY(3.5px) rotate(45deg);
+    }
+
+    .contact-page #menuToggle.is-active span:last-child {
+        transform: translateY(-3.5px) rotate(-45deg);
+    }
+
+    /* Само меню */
+    .contact-page #navigation {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        bottom: auto;
+
+        z-index: 1003;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 30px;
+
+        padding: 35px var(--page-padding);
+
+        background: rgba(8, 8, 8, 0.98);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+    /* Открытое меню */
+    .contact-page #navigation.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    /* Ссылки */
+    .contact-page #navigation .navigation__link {
+        display: block;
+        font-size: 24px;
+        color: #fff;
+    }
+
+}

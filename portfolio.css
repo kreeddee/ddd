@@ -1,0 +1,1114 @@
+/* =====================================================
+   AGENT 008
+   PORTFOLIO PAGE
+===================================================== */
+
+:root {
+    --archive-white: #f5f5f5;
+    --archive-muted: #929292;
+    --archive-border: rgba(255, 255, 255, 0.13);
+    --archive-surface: rgba(255, 255, 255, 0.035);
+    --archive-padding: clamp(20px, 6vw, 100px);
+}
+
+/* Общая страница */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+#pageShell {
+    min-height: 100vh;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.archive-hero {
+    position: relative;
+    min-height: min(780px, 90vh);
+    min-height: min(780px, 90svh);
+
+    display: flex;
+    align-items: center;
+
+    padding:
+        calc(var(--header-height, 88px) + 100px)
+        var(--archive-padding)
+        100px;
+
+    overflow: hidden;
+}
+
+.archive-hero__content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 1050px;
+}
+
+.archive-hero__eyebrow,
+.archive-label {
+    display: inline-block;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    line-height: 1.8;
+
+    color: var(--archive-muted);
+}
+
+.archive-hero__title {
+    margin: 32px 0 25px;
+
+    font-size: clamp(48px, 8vw, 112px);
+    font-weight: 400;
+    line-height: 0.99;
+    letter-spacing: -0.075em;
+}
+
+.archive-hero__title span,
+.archive-gallery__title span,
+.archive-cta h2 span {
+    color: #858585;
+}
+
+.archive-hero__description {
+    max-width: 470px;
+    margin: 0;
+
+    color: #aaa;
+    font-size: clamp(14px, 1.5vw, 17px);
+    font-weight: 300;
+    line-height: 1.9;
+}
+
+.archive-hero__scroll {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 55px;
+
+    color: var(--archive-white);
+    text-decoration: none;
+
+    font-size: 11px;
+    letter-spacing: 0.08em;
+
+    transition: opacity 0.3s ease;
+}
+
+.archive-hero__scroll:hover {
+    opacity: 0.65;
+}
+
+.archive-hero__scroll-line {
+    width: 42px;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.65);
+}
+
+.archive-hero__side {
+    position: absolute;
+    right: var(--archive-padding);
+    bottom: 90px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    color: #666;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+
+    text-align: right;
+}
+
+/* =====================================================
+   GALLERY SECTION
+===================================================== */
+
+.archive-gallery {
+    position: relative;
+    padding:
+        80px
+        var(--archive-padding)
+        130px;
+}
+
+.archive-gallery__heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 35px;
+
+    margin-bottom: 55px;
+}
+
+.archive-gallery__title {
+    margin: 18px 0 0;
+
+    font-size: clamp(38px, 5vw, 68px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.06em;
+}
+
+.archive-gallery__subtitle {
+    max-width: 260px;
+    margin: 0 0 5px;
+
+    color: var(--archive-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+.archive-filters {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 28px;
+}
+
+.archive-filter {
+    min-height: 42px;
+    padding: 0 19px;
+
+    border: 1px solid var(--archive-border);
+    border-radius: 100px;
+
+    background: transparent;
+
+    color: #aaa;
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.archive-filter:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.archive-filter:active {
+    transform: scale(0.97);
+}
+
+.archive-filter.is-active {
+    color: #080808;
+    background: #f5f5f5;
+    border-color: #f5f5f5;
+}
+
+.archive-filter:focus-visible,
+.archive-card:focus-visible,
+.lightbox button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+}
+
+/* =====================================================
+   GALLERY META
+===================================================== */
+
+.archive-gallery__meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 18px 0;
+    margin-bottom: 10px;
+
+    border-top: 1px solid var(--archive-border);
+
+    color: #777;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+}
+
+/* =====================================================
+   PHOTO GRID
+===================================================== */
+
+/* =====================================================
+   PORTFOLIO GRID — BALANCED EDITORIAL LAYOUT
+===================================================== */
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    /* Ритм сетки без чрезмерно узких ячеек */
+    grid-auto-rows: 300px;
+
+    gap: 18px;
+    align-items: stretch;
+}
+
+/* Вертикальные фотографии */
+.archive-card--tall {
+    grid-row: span 2;
+    grid-column: span 1;
+}
+
+/* Широкие фотографии */
+.archive-card--wide {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+/* Основа каждой карточки */
+.archive-card {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    background: #141414;
+}
+
+/* Фотография внутри карточки */
+.archive-card img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    /* Центр кадра по умолчанию */
+    object-position: center 35%;
+
+    transition:
+        transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 0.5s ease;
+}
+
+/* Лёгкое увеличение при наведении */
+.archive-card:hover img {
+    transform: scale(1.035);
+    filter: brightness(0.82);
+}
+
+/* Планшеты */
+@media (max-width: 1000px) {
+    .archive-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 300px;
+        gap: 14px;
+    }
+
+    .archive-card--wide {
+        grid-column: span 1;
+    }
+
+    .archive-card--tall {
+        grid-row: span 1;
+    }
+}
+
+/* Телефоны */
+@media (max-width: 700px) {
+    .archive-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: clamp(190px, 58vw, 280px);
+        gap: 10px;
+    }
+
+    .archive-card--tall,
+    .archive-card--wide {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .archive-card img {
+        object-position: center 30%;
+    }
+}
+
+/* Очень маленькие телефоны */
+@media (max-width: 380px) {
+    .archive-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 320px;
+    }
+}
+
+.archive-card {
+    position: relative;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+
+    padding: 0;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 3px;
+
+    background: #141414;
+    color: #fff;
+
+    text-align: left;
+    cursor: pointer;
+
+    isolation: isolate;
+}
+
+.archive-card--tall {
+    grid-row: span 2;
+}
+
+.archive-card--wide {
+    grid-column: span 2;
+}
+
+
+
+.archive-card:hover img {
+    transform: scale(1.045);
+    filter: brightness(0.78);
+}
+
+.archive-card__overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: flex-end;
+    gap: 13px;
+
+    padding: 23px;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.78) 0%,
+        rgba(0, 0, 0, 0.2) 32%,
+        transparent 65%
+    );
+
+    opacity: 0;
+
+    transition: opacity 0.35s ease;
+}
+
+.archive-card:hover .archive-card__overlay,
+.archive-card:focus-visible .archive-card__overlay {
+    opacity: 1;
+}
+
+.archive-card__number,
+.archive-card__name {
+    font-family: "Orbitron", sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+}
+
+.archive-card__number {
+    color: #aaa;
+}
+
+.archive-card__name {
+    color: #fff;
+}
+
+.archive-card__open {
+    margin-left: auto;
+    font-size: 17px;
+}
+
+.archive-card.is-filtered-out {
+    display: none;
+}
+
+.archive-empty {
+    padding: 50px 20px;
+
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* =====================================================
+   CALL TO ACTION
+===================================================== */
+
+.archive-cta {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding:
+        100px
+        var(--archive-padding)
+        130px;
+
+    border-top: 1px solid var(--archive-border);
+
+    text-align: center;
+}
+
+.archive-cta h2 {
+    margin: 28px 0 20px;
+
+    font-size: clamp(38px, 6vw, 76px);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.065em;
+}
+
+.archive-cta p {
+    max-width: 440px;
+    margin: 0;
+
+    color: #999;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.archive-cta__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 35px;
+
+    margin-top: 38px;
+    padding: 17px 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.archive-cta__button:hover {
+    color: #080808;
+    background: #fff;
+    border-color: #fff;
+}
+
+.archive-cta__button span {
+    font-size: 16px;
+}
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 100px 70px;
+
+    background: rgba(5, 5, 5, 0.97);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.lightbox__top {
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    right: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    color: #aaa;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.17em;
+}
+
+.lightbox__close {
+    position: absolute;
+    top: 55px;
+    right: 40px;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.lightbox__close:hover {
+    transform: rotate(90deg);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.lightbox__close span {
+    position: absolute;
+
+    width: 17px;
+    height: 1px;
+
+    background: #fff;
+}
+
+.lightbox__close span:first-child {
+    transform: rotate(45deg);
+}
+
+.lightbox__close span:last-child {
+    transform: rotate(-45deg);
+}
+
+.lightbox__figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    margin: 0;
+}
+
+.lightbox__image {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: calc(100vh - 190px);
+    max-height: calc(100svh - 190px);
+
+    object-fit: contain;
+
+    user-select: none;
+    -webkit-user-drag: none;
+
+    opacity: 1;
+    transition: opacity 0.18s ease;
+}
+
+.lightbox__image.is-changing {
+    opacity: 0.25;
+}
+
+.lightbox__caption {
+    margin-top: 17px;
+
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+.lightbox__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.035);
+    color: #fff;
+
+    font-size: 21px;
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.lightbox__arrow:hover {
+    color: #080808;
+    background: #fff;
+    border-color: #fff;
+}
+
+.lightbox__arrow--prev {
+    left: 28px;
+}
+
+.lightbox__arrow--next {
+    right: 28px;
+}
+
+.lightbox__hint {
+    position: absolute;
+    bottom: 28px;
+    left: 20px;
+    right: 20px;
+
+    color: #666;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.13em;
+    text-align: center;
+}
+
+/* =====================================================
+   REVEAL ANIMATIONS
+===================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+    .archive-hero .reveal,
+    .archive-gallery .reveal,
+    .archive-cta.reveal {
+        opacity: 0;
+        transform: translateY(22px);
+
+        transition:
+            opacity 0.7s ease,
+            transform 0.7s ease;
+    }
+
+    .archive-hero .reveal.is-visible,
+    .archive-gallery .reveal.is-visible,
+    .archive-cta.reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+    .archive-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 280px;
+    }
+
+    .archive-card--wide {
+        grid-column: span 1;
+    }
+
+    .archive-gallery__heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .archive-gallery__subtitle {
+        max-width: 450px;
+    }
+
+    .lightbox {
+        padding-right: 75px;
+        padding-left: 75px;
+    }
+
+    .lightbox__arrow--prev {
+        left: 12px;
+    }
+
+    .lightbox__arrow--next {
+        right: 12px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+    .archive-hero {
+        min-height: 690px;
+        min-height: 85svh;
+
+        padding-top: 150px;
+        padding-bottom: 90px;
+    }
+
+    .archive-hero__title {
+        margin-top: 25px;
+
+        font-size: clamp(46px, 12vw, 76px);
+        letter-spacing: -0.07em;
+    }
+
+    .archive-hero__description {
+        max-width: 340px;
+        font-size: 13px;
+    }
+
+    .archive-hero__scroll {
+        margin-top: 38px;
+    }
+
+    .archive-hero__side {
+        right: var(--archive-padding);
+        bottom: 35px;
+
+        gap: 7px;
+        font-size: 8px;
+    }
+
+    .archive-gallery {
+        padding-top: 65px;
+        padding-bottom: 80px;
+    }
+
+    .archive-gallery__heading {
+        margin-bottom: 35px;
+    }
+
+    .archive-gallery__title {
+        font-size: clamp(39px, 10vw, 56px);
+    }
+
+    .archive-gallery__subtitle {
+        font-size: 12px;
+    }
+
+    .archive-filters {
+        gap: 8px;
+        margin-bottom: 23px;
+    }
+
+    .archive-filter {
+        min-height: 38px;
+        padding: 0 14px;
+
+        font-size: 10px;
+    }
+
+    .archive-gallery__meta {
+        font-size: 8px;
+        letter-spacing: 0.08em;
+    }
+
+    .archive-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: clamp(170px, 54vw, 270px);
+        gap: 10px;
+    }
+
+    .archive-card--tall {
+        grid-row: span 1;
+    }
+
+    .archive-card__overlay {
+        padding: 12px;
+        gap: 7px;
+
+        opacity: 1;
+
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.72),
+            transparent 60%
+        );
+    }
+
+    .archive-card__number,
+    .archive-card__name {
+        font-size: 7px;
+        letter-spacing: 0.06em;
+    }
+
+    .archive-card__open {
+        font-size: 13px;
+    }
+
+    .archive-cta {
+        padding-top: 80px;
+        padding-bottom: 95px;
+    }
+
+    .archive-cta h2 {
+        font-size: clamp(37px, 9vw, 58px);
+    }
+
+    .archive-cta p {
+        font-size: 12px;
+    }
+
+    .lightbox {
+        padding: 75px 15px 85px;
+    }
+
+    .lightbox__top {
+        top: 22px;
+        left: 18px;
+        right: 75px;
+
+        font-size: 8px;
+        letter-spacing: 0.1em;
+    }
+
+    .lightbox__close {
+        top: 12px;
+        right: 12px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+    .lightbox__image {
+        max-width: 100%;
+        max-height: calc(100vh - 180px);
+        max-height: calc(100svh - 180px);
+    }
+
+    .lightbox__arrow {
+        top: auto;
+        bottom: 25px;
+
+        width: 43px;
+        height: 43px;
+
+        transform: none;
+    }
+
+    .lightbox__arrow--prev {
+        left: calc(50% - 57px);
+    }
+
+    .lightbox__arrow--next {
+        right: calc(50% - 57px);
+    }
+
+    .lightbox__caption {
+        max-width: 90%;
+        font-size: 10px;
+    }
+
+    .lightbox__hint {
+        display: none;
+    }
+}
+
+/* Маленькие телефоны */
+
+@media (max-width: 380px) {
+    .archive-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 330px;
+    }
+
+    .archive-card--wide {
+        grid-column: span 1;
+    }
+
+    .archive-hero__title {
+        font-size: 44px;
+    }
+}
+
+/* Системная настройка уменьшения анимации */
+
+@media (prefers-reduced-motion: reduce) {
+    .archive-card img,
+    .archive-card__overlay,
+    .archive-filter,
+    .archive-cta__button,
+    .lightbox,
+    .lightbox__arrow,
+    .lightbox__close {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+/* =====================================================
+   008 — EDITORIAL MASONRY GALLERY
+===================================================== */
+
+.archive-grid {
+    display: block;
+    column-count: 3;
+    column-gap: 18px;
+}
+
+/* Карточка */
+.archive-card,
+.archive-card--tall,
+.archive-card--wide {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    min-height: 0;
+
+    margin: 0 0 18px;
+    padding: 0;
+
+    overflow: hidden;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+
+    background: #0d0d0d;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Изображение сохраняет свои исходные пропорции */
+.archive-card img {
+    position: relative;
+    inset: auto;
+
+    display: block;
+    width: 100%;
+    height: auto;
+
+    object-fit: initial;
+    object-position: center;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.4s ease;
+}
+
+/* Эффект при наведении */
+.archive-card:hover img {
+    transform: scale(1.025);
+    filter: brightness(0.82);
+}
+
+/* Убираем прежнее растягивание карточек */
+.archive-card--tall,
+.archive-card--wide {
+    grid-column: auto;
+    grid-row: auto;
+}
+
+/* Планшеты */
+@media (max-width: 1000px) {
+    .archive-grid {
+        column-count: 2;
+        column-gap: 14px;
+    }
+
+    .archive-card,
+    .archive-card--tall,
+    .archive-card--wide {
+        margin-bottom: 14px;
+    }
+}
+
+/* Телефоны */
+@media (max-width: 700px) {
+    .archive-grid {
+        column-count: 2;
+        column-gap: 10px;
+    }
+
+    .archive-card,
+    .archive-card--tall,
+    .archive-card--wide {
+        margin-bottom: 10px;
+    }
+}
+
+/* Очень маленькие телефоны */
+@media (max-width: 380px) {
+    .archive-grid {
+        column-count: 1;
+    }
+}
+/* Убираем обводку крестика при программном фокусе */
+.lightbox__close:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+}
